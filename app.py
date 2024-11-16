@@ -1,4 +1,4 @@
-import streamlit as stimport streamlit as st
+import streamlit as st
 
 # Main page configuration
 st.set_page_config(
