@@ -78,8 +78,8 @@ if st.button("🔍 Predict"):
     prediction_proba = model.predict_proba(input_data)[0][1]
 
     # Adjusted threshold for prediction
-    threshold = 0.59
-    prediction = 1 if prediction_proba > threshold else 0
+    threshold = 0.591
+    prediction = 1 if prediction_proba >= threshold else 0
 
     # Display prediction result without showing probability
     if prediction == 1:
