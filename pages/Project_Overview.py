@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-# Title
+# Page Title
 st.title("📋 Project Overview")
 st.write("""
 Welcome to the **Obesity Prediction App**. This app predicts the likelihood of an individual being obese using a pre-trained **Random Forest Classifier**. The project was developed by **Bernardo Santos** as part of the Machine Learning II course in the Master's in Business Analytics & Big Data at IE University.
@@ -30,7 +30,7 @@ classification_data = {
 }
 classification_df = pd.DataFrame(classification_data)
 
-# Render the table in Streamlit
+# Generating the classification table directly on Streamlit
 st.table(classification_df)
 
 st.write("""
@@ -40,7 +40,7 @@ st.write("""
 - **Overall**: The weighted average F1-Score of 0.79 reflects balanced performance across both classes, showing noticeable improvement from prior iterations.
 """)
 
-# Confusion Matrix - Training Data
+# Confusion Matrix - Training Data image and description
 st.subheader("Confusion Matrix - Training Set")
 st.image(
     "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/CM_training.png", 
@@ -52,7 +52,7 @@ st.write("""
 - This performance aligns with expectations following hyperparameter tuning, indicating the model has learned the training data effectively.
 """)
 
-# Confusion Matrix - Test Data
+# Confusion Matrix - Test Data image and description
 st.subheader("Confusion Matrix - Test Set")
 st.image(
     "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/CM_Test.png", 
@@ -65,7 +65,7 @@ st.write("""
 - The test set results highlight the model's ability to generalize, showing improvement in identifying obese cases compared to earlier iterations.
 """)
 
-# ROC Curve
+# ROC Curve image and description
 st.subheader("ROC Curve")
 st.image(
     "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/ROC.png", 
@@ -77,7 +77,7 @@ st.write("""
 - This improvement is a direct result of hyperparameter tuning and grid search, which optimized the Random Forest Classifier to achieve balanced performance across classes.
 """)
 
-# Final Comments
+# Some final comments
 st.write("""
 The enhancements in metrics and visualizations clearly demonstrate the effectiveness of hyperparameter tuning and grid search. These techniques allowed the model to achieve better precision and recall, particularly for the minority (obese) class, addressing class imbalance and reducing overfitting.
 """)
