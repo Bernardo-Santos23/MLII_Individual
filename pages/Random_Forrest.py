@@ -111,3 +111,11 @@ if st.button("🔍 Predict"):
         **Note**: This prediction is not a medical diagnosis. Always seek professional medical advice for health-related decisions.
         """
     )
+
+# Add final note
+st.markdown("""
+---
+### ⚠️ Important Note
+Maximizing each health parameter individually or collectively does not guarantee a diabetic prediction, as diabetes is a complex condition influenced by multiple factors.  
+Always consult a healthcare professional for personalized advice and a comprehensive health assessment.
+""")
