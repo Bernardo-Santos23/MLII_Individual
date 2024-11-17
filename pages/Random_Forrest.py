@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 
-# Load the trained model
+# Loading the trained model (pickle file)
 with open("diabetes.pkl", "rb") as f:
     model = pickle.load(f)
 
@@ -27,7 +27,7 @@ st.info("""
 
 st.markdown("---")
 
-# Sidebar Health Parameter Descriptions
+# Sidebar detailing what each health metric means (user friendly)
 st.sidebar.header("ℹ️ About the Health Parameters")
 st.sidebar.markdown("""
 **Here are the details of the parameters you need to provide:**  
@@ -49,7 +49,7 @@ st.sidebar.markdown("""
   The age of the individual.
 """)
 
-# Sliders for User Input on the Main Page (Pre-set values for a healthy 24-year-old)
+# Sliders for User Input on the Main Page (Pre-set values for a healthy 24-year-old as context)
 st.header("📋 Enter Your Health Parameters")
 pregnancies = st.slider("🤰 Pregnancies", 0, 20, 0, help="Number of pregnancies (e.g., 0 for a healthy 24-year-old)")
 glucose = st.slider("🍬 Glucose Level", 0, 200, 90, help="Normal glucose level (mg/dL)")
