@@ -8,16 +8,16 @@ with open("diabetes.pkl", "rb") as f:
 
 # Page Title and Configuration
 st.set_page_config(
-    page_title="🔍 Obesity Prediction App",
-    page_icon="🍏",
+    page_title="🔍 Diabetes Prediction App",
+    page_icon="🩺",
     layout="centered",
 )
 
 # Main Header and Introduction
-st.title("🔍 Obesity Prediction App")
+st.title("🔍 Diabetes Prediction App")
 st.write("""
-Welcome to the **Obesity Prediction App**, where you can analyze your health parameters to assess the likelihood of obesity using a trained **Random Forest Model**.  
-Use the sliders below to input your health information and predict obesity likelihood.
+Welcome to the **Diabetes Prediction App**, where you can analyze your health parameters to assess the likelihood of diabetes using a trained **Random Forest Model**.  
+Use the sliders below to input your health information and predict diabetes likelihood.
 """)
 
 st.info("""
@@ -80,8 +80,8 @@ if st.button("🔍 Predict"):
         st.markdown(
             f"""
             <div style="border: 3px solid #b30000; padding: 15px; border-radius: 10px; background-color: #ffe6e6; color: #b30000;">
-            <h3>🚨 <b>Prediction: Likely Obese</b></h3>
-            <p>The model predicts that the individual is <b>likely obese</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
+            <h3>🚨 <b>Prediction: Likely Diabetic</b></h3>
+            <p>The model predicts that the individual is <b>likely diabetic</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
             <p><b>🔴 Recommendation:</b> Please consult a healthcare provider for a detailed health assessment and tailored advice.</p>
             </div>
             """,
@@ -91,8 +91,8 @@ if st.button("🔍 Predict"):
         st.markdown(
             f"""
             <div style="border: 3px solid #007300; padding: 15px; border-radius: 10px; background-color: #e6ffe6; color: #007300;">
-            <h3>✅ <b>Prediction: Not Obese</b></h3>
-            <p>The model predicts that the individual is <b>not obese</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
+            <h3>✅ <b>Prediction: Not Diabetic</b></h3>
+            <p>The model predicts that the individual is <b>not diabetic</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
             <p><b>🟢 Great Work:</b> Maintain a healthy lifestyle to ensure long-term well-being!</p>
             </div>
             """,
@@ -105,4 +105,3 @@ if st.button("🔍 Predict"):
         **Note**: This prediction is not a medical diagnosis. Always seek professional medical advice for health-related decisions.
         """
     )
-
