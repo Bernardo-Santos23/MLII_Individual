@@ -35,9 +35,9 @@ st.table(classification_df)
 
 st.write("""
 ### What this means:
-- **Class 0 (Non-Obese)**: The model performs well, achieving high precision (0.89) and a recall of 0.78, meaning most non-obese individuals are correctly identified.
-- **Class 1 (Obese)**: Performance is lower, with a precision of 0.61 and a recall of 0.79, indicating the model is better at capturing obese cases (fewer false negatives) but less precise.
-- **Overall**: The weighted average F1-Score of 0.79 reflects good performance across both classes, with room for improvement in identifying obese cases.
+- **Class 0 (Non-Obese)**: The model demonstrates strong performance, achieving high precision (0.89) and a recall of 0.78, effectively identifying most non-obese individuals.
+- **Class 1 (Obese)**: Performance is slightly lower, with a precision of 0.61 and a recall of 0.79. This indicates the model is better at detecting obese cases (fewer false negatives) but has lower precision.
+- **Overall**: The weighted average F1-Score of 0.79 reflects balanced performance across both classes, showing noticeable improvement from prior iterations.
 """)
 
 # Confusion Matrix - Training Data
@@ -48,8 +48,8 @@ st.image(
 )
 st.write("""
 **What this means**:
-- The training set shows perfect classification, indicating no misclassifications. This is expected after hyperparameter tuning because the model is better optimized for the training data.
-- While this can suggest potential overfitting, the performance on the test set helps validate the model's generalizability.
+- The training set shows strong classification performance, with 285 correct predictions for Non-Obese and 178 for Obese. Only a few instances were misclassified.
+- This performance aligns with expectations following hyperparameter tuning, indicating the model has learned the training data effectively.
 """)
 
 # Confusion Matrix - Test Data
@@ -60,9 +60,9 @@ st.image(
 )
 st.write("""
 **What this means**:
-- Out of 160 actual non-obese cases, 127 were correctly classified, while 33 were misclassified as obese (False Positives).
-- For 71 actual obese cases, 53 were correctly classified, and 18 were misclassified as non-obese (False Negatives).
-- These results show that hyperparameter tuning and the improved Random Forest Classifier addressed many of the earlier issues, particularly in better identifying obese cases.
+- Out of 160 actual non-obese cases, 124 were correctly classified, while 36 were misclassified as obese (False Positives).
+- For 71 actual obese cases, 56 were correctly classified, and 15 were misclassified as non-obese (False Negatives).
+- The test set results highlight the model's ability to generalize, showing improvement in identifying obese cases compared to earlier iterations.
 """)
 
 # ROC Curve
@@ -73,11 +73,11 @@ st.image(
 )
 st.write("""
 **What this means**:
-- The AUC (Area Under the Curve) value is 0.85, demonstrating that the model has a strong ability to discriminate between obese and non-obese cases.
-- This improvement from previous iterations highlights the importance of hyperparameter tuning and grid search in achieving a well-optimized model.
+- The AUC (Area Under the Curve) value is 0.81, indicating that the model has a strong ability to distinguish between obese and non-obese cases.
+- This improvement is a direct result of hyperparameter tuning and grid search, which optimized the Random Forest Classifier to achieve balanced performance across classes.
 """)
 
 # Final Comments
 st.write("""
-The improvements in metrics and visualizations demonstrate the effectiveness of hyperparameter tuning and grid search. These techniques enabled the model to better balance precision and recall, address class imbalance, and avoid overfitting, leading to an overall better-performing Random Forest Classifier.
+The enhancements in metrics and visualizations clearly demonstrate the effectiveness of hyperparameter tuning and grid search. These techniques allowed the model to achieve better precision and recall, particularly for the minority (obese) class, addressing class imbalance and reducing overfitting.
 """)
