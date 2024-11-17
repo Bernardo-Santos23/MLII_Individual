@@ -8,13 +8,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Add IE Logo at the top
-st.image(
-    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/iesst_logo.jpeg", 
-    width=200, 
-    caption="IE University - Master in Business Analytics & Big Data"
-)
-
 # Main Title and Introduction
 st.title("🍏 Welcome to the Obesity Prediction App")
 st.write("""
@@ -25,8 +18,8 @@ Navigate through the app using the **sidebar** to explore predictions, insights,
 # Add cover image for the app
 st.image(
     "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/Dalle_RF.webp",
-    caption="Visual Representation of the Random Forest Model",
-    use_column_width=True
+    use_column_width=False,
+    width=500
 )
 
 # Add a visual divider
@@ -52,3 +45,12 @@ st.markdown("""
 2. Get real-time obesity predictions.  
 3. Understand the insights to take control of your health.  
 """)
+
+# Add IE Logo at the bottom
+st.markdown("---")
+st.image(
+    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/iesst_logo.jpeg", 
+    width=200, 
+    caption="IE University - Master in Business Analytics & Big Data"
+)
+
