@@ -66,11 +66,11 @@ if st.button("🔍 Predict"):
     prediction = model.predict(input_data)[0]
     prediction_proba = model.predict_proba(input_data)[0][1]
 
-    # Display prediction result with colored box
+    # Display prediction result with accessible colors
     if prediction == 1:
         st.markdown(
             f"""
-            <div style="border: 2px solid red; padding: 10px; border-radius: 5px; background-color: #ffe6e6;">
+            <div style="border: 3px solid #b30000; padding: 15px; border-radius: 10px; background-color: #ffe6e6; color: #b30000;">
             <h3>🚨 <b>Prediction: Likely Obese</b></h3>
             <p>The model predicts that the individual is <b>likely obese</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
             <p><b>🔴 Recommendation:</b> Please consult a healthcare provider for a detailed health assessment and tailored advice.</p>
@@ -81,7 +81,7 @@ if st.button("🔍 Predict"):
     else:
         st.markdown(
             f"""
-            <div style="border: 2px solid green; padding: 10px; border-radius: 5px; background-color: #e6ffe6;">
+            <div style="border: 3px solid #007300; padding: 15px; border-radius: 10px; background-color: #e6ffe6; color: #007300;">
             <h3>✅ <b>Prediction: Not Obese</b></h3>
             <p>The model predicts that the individual is <b>not obese</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
             <p><b>🟢 Great Work:</b> Maintain a healthy lifestyle to ensure long-term well-being!</p>
@@ -96,3 +96,4 @@ if st.button("🔍 Predict"):
         **Note**: This prediction is not a medical diagnosis. Always seek professional medical advice for health-related decisions.
         """
     )
+
