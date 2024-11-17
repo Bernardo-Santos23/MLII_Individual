@@ -55,7 +55,7 @@ st.write("""
 # Confusion Matrix - Test Data
 st.subheader("Confusion Matrix - Test Set")
 st.image(
-    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/Screenshot%202024-11-17%20at%2012.55.59.png", 
+    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/CM_Test.png", 
     caption="Confusion Matrix for Test Data"
 )
 st.write("""
@@ -68,7 +68,7 @@ st.write("""
 # ROC Curve
 st.subheader("ROC Curve")
 st.image(
-    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/Screenshot%202024-11-17%20at%2012.56.06.png", 
+    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/ROC.png", 
     caption="ROC Curve"
 )
 st.write("""
