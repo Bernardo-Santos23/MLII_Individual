@@ -24,15 +24,24 @@ st.markdown("---")
 
 # Sidebar Health Parameter Descriptions
 st.sidebar.header("ℹ️ About the Health Parameters")
-st.sidebar.write("""
-- **🤰 Pregnancies**: Number of times the individual has been pregnant.
-- **🍬 Glucose Level**: Blood sugar level measured in mg/dL; higher values may indicate diabetes.
-- **💉 Blood Pressure**: Diastolic blood pressure (mm Hg), representing the pressure in your arteries when the heart rests between beats.
-- **📏 Skin Thickness**: Skinfold thickness measured on the triceps (mm); used to estimate body fat percentage.
-- **💉 Insulin Level**: Blood insulin level (μU/mL); high values may indicate insulin resistance.
-- **⚖️ BMI**: Body Mass Index (kg/m²); a measure of body fat based on weight and height.
-- **👨‍👩‍👧 Diabetes Pedigree Function**: A function that scores the likelihood of diabetes based on family history.
-- **🎂 Age**: Age of the individual.
+st.sidebar.markdown("""
+**Here are the details of the parameters you need to provide:**  
+- **🤰 Pregnancies**:  
+  The number of times the individual has been pregnant.  
+- **🍬 Glucose Level**:  
+  Blood sugar level measured in mg/dL; higher values may indicate diabetes.  
+- **💉 Blood Pressure**:  
+  Diastolic blood pressure (mm Hg), representing the pressure in your arteries when the heart rests between beats.  
+- **📏 Skin Thickness**:  
+  Skinfold thickness measured on the triceps (mm); used to estimate body fat percentage.  
+- **💉 Insulin Level**:  
+  Blood insulin level (μU/mL); high values may indicate insulin resistance.  
+- **⚖️ BMI**:  
+  Body Mass Index (kg/m²); a measure of body fat based on weight and height.  
+- **👨‍👩‍👧 Diabetes Pedigree Function**:  
+  A function that scores the likelihood of diabetes based on family history.  
+- **🎂 Age**:  
+  The age of the individual.
 """)
 
 # Sliders for User Input on the Main Page
@@ -57,22 +66,28 @@ if st.button("🔍 Predict"):
     prediction = model.predict(input_data)[0]
     prediction_proba = model.predict_proba(input_data)[0][1]
 
-    # Display prediction result
+    # Display prediction result with colored box
     if prediction == 1:
         st.markdown(
             f"""
-            ### 🚨 **Prediction: Likely Obese**
-            The model predicts that the individual is **likely obese** with a probability of **{prediction_proba:.2f}**.  
-            🔴 **Recommendation**: Please consult a healthcare provider for a detailed health assessment and tailored advice.
-            """
+            <div style="border: 2px solid red; padding: 10px; border-radius: 5px; background-color: #ffe6e6;">
+            <h3>🚨 <b>Prediction: Likely Obese</b></h3>
+            <p>The model predicts that the individual is <b>likely obese</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
+            <p><b>🔴 Recommendation:</b> Please consult a healthcare provider for a detailed health assessment and tailored advice.</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
     else:
         st.markdown(
             f"""
-            ### ✅ **Prediction: Not Obese**
-            The model predicts that the individual is **not obese** with a probability of **{prediction_proba:.2f}**.  
-            🟢 **Keep up the good work!** Maintain a healthy lifestyle to ensure long-term well-being.
-            """
+            <div style="border: 2px solid green; padding: 10px; border-radius: 5px; background-color: #e6ffe6;">
+            <h3>✅ <b>Prediction: Not Obese</b></h3>
+            <p>The model predicts that the individual is <b>not obese</b> with a probability of <b>{prediction_proba:.2f}</b>.</p>
+            <p><b>🟢 Great Work:</b> Maintain a healthy lifestyle to ensure long-term well-being!</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
 
     # Emphasize the importance of monitoring
@@ -81,4 +96,3 @@ if st.button("🔍 Predict"):
         **Note**: This prediction is not a medical diagnosis. Always seek professional medical advice for health-related decisions.
         """
     )
-
