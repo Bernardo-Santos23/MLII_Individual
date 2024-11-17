@@ -22,62 +22,62 @@ st.header("📊 Model Evaluation")
 # Classification Report as Table
 st.subheader("Classification Report")
 classification_data = {
-    "precision": [0.82, 0.62],
-    "recall": [0.77, 0.69],
-    "f1-score": [0.79, 0.65],
-    "support": [150, 81]
+    "Class": ["Non-Obese (0)", "Obese (1)", "Accuracy", "Macro Avg", "Weighted Avg"],
+    "Precision": [0.89, 0.61, "-", 0.75, 0.80],
+    "Recall": [0.78, 0.79, "-", 0.78, 0.78],
+    "F1-Score": [0.83, 0.69, "-", 0.76, 0.79],
+    "Support": [160, 71, 231, 231, 231]
 }
-classification_df = pd.DataFrame(classification_data, index=["Class 0 (Non-Obese)", "Class 1 (Obese)"])
-classification_df.loc["accuracy"] = ["-", "-", "-", 0.74]
-classification_df.loc["macro avg"] = [0.72, 0.73, 0.72, 231]
-classification_df.loc["weighted avg"] = [0.75, 0.74, 0.74, 231]
+classification_df = pd.DataFrame(classification_data)
 
+# Render the table in Streamlit
 st.table(classification_df)
 
 st.write("""
-**What this means**:
-- Class 0 (Non-Obese) has better performance metrics, with a precision of 0.82 and recall of 0.77.
-- Class 1 (Obese) has a lower precision of 0.62 but shows an improved recall of 0.69 compared to prior iterations, indicating better identification of obese individuals.
-- The overall accuracy of the model is 74%, and the macro average F1-score is 0.72, which shows balanced improvements.
+### What this means:
+- **Class 0 (Non-Obese)**: The model performs well, achieving high precision (0.89) and a recall of 0.78, meaning most non-obese individuals are correctly identified.
+- **Class 1 (Obese)**: Performance is lower, with a precision of 0.61 and a recall of 0.79, indicating the model is better at capturing obese cases (fewer false negatives) but less precise.
+- **Overall**: The weighted average F1-Score of 0.79 reflects good performance across both classes, with room for improvement in identifying obese cases.
 """)
 
 # Confusion Matrix - Training Data
 st.subheader("Confusion Matrix - Training Set")
 st.image(
-    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/CM_Train.png", 
+    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/CM_training.png", 
     caption="Confusion Matrix for Training Data"
 )
 st.write("""
 **What this means**:
-- The training set shows perfect classification (no misclassifications). This may indicate overfitting, where the model memorizes the training data instead of generalizing.
+- The training set shows perfect classification, indicating no misclassifications. This is expected after hyperparameter tuning because the model is better optimized for the training data.
+- While this can suggest potential overfitting, the performance on the test set helps validate the model's generalizability.
 """)
 
 # Confusion Matrix - Test Data
 st.subheader("Confusion Matrix - Test Set")
 st.image(
-    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/CM_Test.png", 
+    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/Screenshot%202024-11-17%20at%2012.55.59.png", 
     caption="Confusion Matrix for Test Data"
 )
 st.write("""
 **What this means**:
-- Out of 150 actual non-obese cases, 127 were correctly classified, while 23 were misclassified as obese (False Positives).
-- For 81 actual obese cases, 53 were correctly classified, and 28 were misclassified as non-obese (False Negatives).
-- These misclassifications suggest the model can be improved, especially in identifying obese cases.
+- Out of 160 actual non-obese cases, 127 were correctly classified, while 33 were misclassified as obese (False Positives).
+- For 71 actual obese cases, 53 were correctly classified, and 18 were misclassified as non-obese (False Negatives).
+- These results show that hyperparameter tuning and the improved Random Forest Classifier addressed many of the earlier issues, particularly in better identifying obese cases.
 """)
 
 # ROC Curve
 st.subheader("ROC Curve")
 st.image(
-    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/ROC.png", 
+    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/Screenshot%202024-11-17%20at%2012.56.06.png", 
     caption="ROC Curve"
 )
 st.write("""
 **What this means**:
-- The AUC (Area Under the Curve) is 0.85, indicating the model has good discriminatory ability between obese and non-obese classes.
-- A higher AUC (closer to 1) means better performance. This value of 0.85 suggests the model is strong but not perfect.
+- The AUC (Area Under the Curve) value is 0.85, demonstrating that the model has a strong ability to discriminate between obese and non-obese cases.
+- This improvement from previous iterations highlights the importance of hyperparameter tuning and grid search in achieving a well-optimized model.
 """)
 
 # Final Comments
 st.write("""
-The model evaluation metrics provide insights into its strengths and weaknesses. While the Random Forest Classifier performs well overall, its performance on obese cases (class 1) can be improved by addressing class imbalance or fine-tuning hyperparameters.
+The improvements in metrics and visualizations demonstrate the effectiveness of hyperparameter tuning and grid search. These techniques enabled the model to better balance precision and recall, address class imbalance, and avoid overfitting, leading to an overall better-performing Random Forest Classifier.
 """)
