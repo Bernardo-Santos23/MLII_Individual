@@ -35,7 +35,7 @@ st.markdown("---")
 # Highlight the creator
 st.markdown("""
 ### 👨‍💻 Created by  
-**Bernardo Santos**  
+***Bernardo Santos***  
 *MBD - A-1 Spring 2025*  
 *For Machine Learning II class, Prof. Concepción Díaz*
 """)
