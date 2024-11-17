@@ -8,12 +8,40 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Add IE Logo at the top
+st.image(
+    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/iesst_logo.jpeg", 
+    width=200, 
+    caption="IE University - Master in Business Analytics & Big Data"
+)
+
+# Main Title and Introduction
 st.title("🍏 Welcome to the Obesity Prediction App")
 st.write("""
-This app predicts the likelihood of obesity using health parameters.  
-Use the sidebar to navigate between pages.
+Welcome to the **Obesity Prediction App**, your go-to tool for assessing the likelihood of obesity based on key health parameters.  
+Navigate through the app using the **sidebar** to explore predictions, insights, and more.
 """)
 
+# Add a visual divider
 st.markdown("---")
-st.write("👨‍💻 **Created by Bernardo Santos**")
-st.write("**MBD - A-1 Spring 2025**")
+
+# Highlight the creator
+st.markdown("""
+### 👨‍💻 Created by  
+**Bernardo Santos**  
+*MBD - A-1 Spring 2025*
+""")
+
+# Add a motivational tagline
+st.markdown("""
+### 🌟 Empowering Health Through Data  
+Transforming health analytics into actionable insights.
+""")
+
+# Add a call-to-action for users
+st.markdown("""
+#### 📊 Start exploring the app now:  
+1. Enter your health parameters.  
+2. Get real-time obesity predictions.  
+3. Understand the insights to take control of your health.  
+""")
