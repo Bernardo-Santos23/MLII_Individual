@@ -18,7 +18,7 @@ st.image(
 # Main title and small introduction
 st.title("🩺 Welcome to the Diabetes Prediction App")
 st.write("""
-Welcome to the **Diabetes Prediction App**, your go-to tool for assessing the likelihood of diabetes based on key health parameters.  
+Welcome to the **Diabetes Prediction App**, your go-to tool for assessing the likelihood of having diabetes based on key health parameters.  
 Navigate through the app using the **sidebar** to explore predictions, insights, and more.
 """)
 
