@@ -17,7 +17,7 @@ Navigate through the app using the **sidebar** to explore predictions, insights,
 
 # Add cover image for the app
 st.image(
-    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/Dalle_RF.webp",
+    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/Dalle_RF.webp",
     use_column_width=False,
     width=500
 )
