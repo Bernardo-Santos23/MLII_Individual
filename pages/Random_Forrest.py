@@ -22,7 +22,7 @@ Use the sliders or manual input fields below to input your health information an
 
 st.info("""
 🔵 **Note**: The sliders are pre-set for a healthy 24-year-old individual.  
-🔵 **Medical Adjustment**: The prediction threshold has been adjusted to **0.6** to maximize reliability and reduce false positives based on evaluation metrics and medical indications.
+🔵 **Medical Adjustment**: The prediction threshold has been adjusted to maximize reliability and reduce false positives based on evaluation metrics and medical indications.
 """)
 
 st.markdown("---")
