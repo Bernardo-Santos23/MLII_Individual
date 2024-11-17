@@ -40,6 +40,13 @@ st.markdown("""
 *For Machine Learning II class, Prof. Concepción Díaz*
 """)
 
+# Dataset source
+st.markdown("""
+### 📚 Dataset Source  
+The original dataset used for this app comes from the **National Institute of Diabetes and Digestive and Kidney Diseases**.  
+It includes medical data used to predict the onset of diabetes based on diagnostic features.
+""")
+
 # Motivational tagline (something extra)
 st.markdown("""
 ### 🌟 Empowering Health Through Data  
