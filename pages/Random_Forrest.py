@@ -20,6 +20,8 @@ Welcome to the **Obesity Prediction App**, where you can analyze your health par
 Use the sliders below to input your health information and predict obesity likelihood.
 """)
 
+st.info("🔵 **Note**: The sliders are pre-set for a healthy 24-year-old individual. You can adjust the values to match your own parameters.")
+
 st.markdown("---")
 
 # Sidebar Health Parameter Descriptions
@@ -44,16 +46,16 @@ st.sidebar.markdown("""
   The age of the individual.
 """)
 
-# Sliders for User Input on the Main Page
+# Sliders for User Input on the Main Page (Pre-set values for a healthy 24-year-old)
 st.header("📋 Enter Your Health Parameters")
-pregnancies = st.slider("🤰 Pregnancies", 0, 20, 1)
-glucose = st.slider("🍬 Glucose Level", 0, 200, 100)
-blood_pressure = st.slider("💉 Blood Pressure", 0, 122, 80)
-skin_thickness = st.slider("📏 Skin Thickness", 0, 99, 20)
-insulin = st.slider("💉 Insulin Level", 0, 846, 30)
-bmi = st.slider("⚖️ BMI", 0.0, 67.1, 25.0)
-diabetes_pedigree_function = st.slider("👨‍👩‍👧 Diabetes Pedigree Function", 0.0, 2.42, 0.5)
-age = st.slider("🎂 Age", 0, 120, 30)
+pregnancies = st.slider("🤰 Pregnancies", 0, 20, 0, help="Number of pregnancies (e.g., 0 for a healthy 24-year-old)")
+glucose = st.slider("🍬 Glucose Level", 0, 200, 90, help="Normal glucose level (mg/dL)")
+blood_pressure = st.slider("💉 Blood Pressure", 0, 122, 75, help="Normal diastolic blood pressure (mm Hg)")
+skin_thickness = st.slider("📏 Skin Thickness", 0, 99, 20, help="Normal skinfold thickness (mm)")
+insulin = st.slider("💉 Insulin Level", 0, 846, 30, help="Normal insulin level (μU/mL)")
+bmi = st.slider("⚖️ BMI", 0.0, 67.1, 22.0, help="Healthy BMI for a 24-year-old (kg/m²)")
+diabetes_pedigree_function = st.slider("👨‍👩‍👧 Diabetes Pedigree Function", 0.0, 2.42, 0.5, help="Diabetes pedigree function value (e.g., 0.5 for normal likelihood)")
+age = st.slider("🎂 Age", 0, 120, 24, help="Age in years (e.g., 24 for a healthy young adult)")
 
 # Collect Input as a NumPy Array
 input_data = np.array([[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age]])
@@ -96,4 +98,3 @@ if st.button("🔍 Predict"):
         **Note**: This prediction is not a medical diagnosis. Always seek professional medical advice for health-related decisions.
         """
     )
-
