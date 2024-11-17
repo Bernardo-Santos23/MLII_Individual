@@ -36,7 +36,7 @@ st.markdown("---")
 st.markdown("""
 ### 👨‍💻 Created by  
 ***Bernardo Santos***  
-**MBD - A-1 Spring 2025**
+*MBD - A-1 Spring 2025*
 *For Machine Learning II class, Prof. Concepción Díaz*
 """)
 
