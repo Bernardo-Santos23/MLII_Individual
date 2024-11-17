@@ -22,6 +22,13 @@ Welcome to the **Obesity Prediction App**, your go-to tool for assessing the lik
 Navigate through the app using the **sidebar** to explore predictions, insights, and more.
 """)
 
+# Add cover image for the app
+st.image(
+    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/Dalle_RF.webp",
+    caption="Visual Representation of the Random Forest Model",
+    use_column_width=True
+)
+
 # Add a visual divider
 st.markdown("---")
 
