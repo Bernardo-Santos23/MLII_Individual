@@ -43,7 +43,7 @@ st.write("""
 # Confusion Matrix - Training Data
 st.subheader("Confusion Matrix - Training Set")
 st.image(
-    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/CM_training.png", 
+    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/CM_training.png", 
     caption="Confusion Matrix for Training Data"
 )
 st.write("""
@@ -55,7 +55,7 @@ st.write("""
 # Confusion Matrix - Test Data
 st.subheader("Confusion Matrix - Test Set")
 st.image(
-    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/CM_Test.png", 
+    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/CM_Test.png", 
     caption="Confusion Matrix for Test Data"
 )
 st.write("""
@@ -68,7 +68,7 @@ st.write("""
 # ROC Curve
 st.subheader("ROC Curve")
 st.image(
-    "https://github.com/Bernardo-Santos23/MLII_Individual/blob/main/images/ROC.png", 
+    "https://raw.githubusercontent.com/Bernardo-Santos23/MLII_Individual/main/images/ROC.png", 
     caption="ROC Curve"
 )
 st.write("""
