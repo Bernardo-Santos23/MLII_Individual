@@ -22,23 +22,23 @@ st.header("📊 Model Evaluation")
 # Classification Report as Table
 st.subheader("Classification Report")
 classification_data = {
-    "precision": [0.76, 0.50],
-    "recall": [0.68, 0.59],
-    "f1-score": [0.72, 0.54],
+    "precision": [0.82, 0.62],
+    "recall": [0.77, 0.69],
+    "f1-score": [0.79, 0.65],
     "support": [150, 81]
 }
 classification_df = pd.DataFrame(classification_data, index=["Class 0 (Non-Obese)", "Class 1 (Obese)"])
-classification_df.loc["accuracy"] = ["-", "-", "-", 0.65]
-classification_df.loc["macro avg"] = [0.63, 0.64, 0.63, 231]
-classification_df.loc["weighted avg"] = [0.67, 0.65, 0.65, 231]
+classification_df.loc["accuracy"] = ["-", "-", "-", 0.74]
+classification_df.loc["macro avg"] = [0.72, 0.73, 0.72, 231]
+classification_df.loc["weighted avg"] = [0.75, 0.74, 0.74, 231]
 
 st.table(classification_df)
 
 st.write("""
 **What this means**:
-- Class 0 (Non-Obese) has better performance metrics, with a precision of 0.76 and recall of 0.68.
-- Class 1 (Obese) has lower precision (0.50) and recall (0.59), indicating the model struggles to identify obese individuals accurately.
-- The overall accuracy of the model is 65%, and the macro average F1-score is 0.63, suggesting room for improvement.
+- Class 0 (Non-Obese) has better performance metrics, with a precision of 0.82 and recall of 0.77.
+- Class 1 (Obese) has a lower precision of 0.62 but shows an improved recall of 0.69 compared to prior iterations, indicating better identification of obese individuals.
+- The overall accuracy of the model is 74%, and the macro average F1-score is 0.72, which shows balanced improvements.
 """)
 
 # Confusion Matrix - Training Data
@@ -81,4 +81,3 @@ st.write("""
 st.write("""
 The model evaluation metrics provide insights into its strengths and weaknesses. While the Random Forest Classifier performs well overall, its performance on obese cases (class 1) can be improved by addressing class imbalance or fine-tuning hyperparameters.
 """)
-
