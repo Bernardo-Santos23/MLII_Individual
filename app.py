@@ -16,3 +16,4 @@ Use the sidebar to navigate between pages.
 
 st.markdown("---")
 st.write("👨‍💻 **Created by Bernardo Santos**")
+st.write("**MBD - A-1 Spring 2025**")
