@@ -20,7 +20,10 @@ Welcome to the **Obesity Prediction App**, where you can analyze your health par
 Use the sliders below to input your health information and predict obesity likelihood.
 """)
 
-st.info("🔵 **Note**: The sliders are pre-set for a healthy 24-year-old individual. You can adjust the values to match your own parameters.")
+st.info("""
+🔵 **Note**: The sliders are pre-set for a healthy 24-year-old individual.  
+🔵 **Medical Adjustment**: The prediction threshold has been adjusted to **0.6** to maximize reliability and reduce false positives based on evaluation metrics and medical indications.
+""")
 
 st.markdown("---")
 
@@ -65,8 +68,12 @@ st.markdown("---")
 # Prediction and Results Section
 st.header("🧪 Prediction Results")
 if st.button("🔍 Predict"):
-    prediction = model.predict(input_data)[0]
+    # Get predicted probabilities for each class
     prediction_proba = model.predict_proba(input_data)[0][1]
+
+    # Adjusted threshold for prediction
+    threshold = 0.6
+    prediction = 1 if prediction_proba >= threshold else 0
 
     # Display prediction result with accessible colors
     if prediction == 1:
@@ -98,3 +105,4 @@ if st.button("🔍 Predict"):
         **Note**: This prediction is not a medical diagnosis. Always seek professional medical advice for health-related decisions.
         """
     )
+
