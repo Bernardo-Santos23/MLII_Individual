@@ -23,10 +23,10 @@ st.header("📊 Model Evaluation")
 st.subheader("Classification Report")
 classification_data = {
     "Class": ["Non-Diabetic (0)", "Diabetic (1)", "Accuracy", "Macro Avg", "Weighted Avg"],
-    "Precision": [0.88, 0.65, "-", 0.77, 0.81],
-    "Recall": [0.80, 0.77, "-", 0.78, 0.78],
-    "F1-Score": [0.84, 0.70, "-", 0.77, 0.79],
-    "Support": [160, 71, 231, 231, 231]
+    "Precision": [0.88, 0.60, "-", 0.74, 0.79],
+    "Recall": [0.77, 0.76, "-", 0.77, 0.77],
+    "F1-Score": [0.82, 0.67, "-", 0.75, 0.78],
+    "Support": [159, 72, 231, 231, 231]
 }
 classification_df = pd.DataFrame(classification_data)
 
