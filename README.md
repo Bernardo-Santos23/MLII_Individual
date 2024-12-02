@@ -3,6 +3,7 @@
 """
 🩺 **Diabetes Prediction App** is a Streamlit-based web application that predicts the likelihood of an individual having diabetes based on key health parameters. 
 This project utilizes a pre-trained Random Forest model to classify diabetes likelihood and provides an easy-to-use interface for users to input relevant health metrics.
+Link: https://bernardoindividual.streamlit.app
 
 ---
 
